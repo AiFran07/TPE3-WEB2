@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MotoresAR - Añadir Vehículo</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">MotoresAR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- inicio main container -->
+    <main class="container">
+
+        <!-- formulario para añadir vehículos -->
+        <form id="vehicle-form" action="add_vehicle.php" method="POST" class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <input name="marca" id="marca" type="text" class="form-control" placeholder="Ejemplo: Toyota" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="modelo">Modelo</label>
+                        <input name="modelo" id="modelo" type="text" class="form-control" placeholder="Ejemplo: Corolla" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="anio">Año</label>
+                        <input name="anio" id="anio" type="number" class="form-control" placeholder="Ejemplo: 2020" min="1900" max="2024" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input name="precio" id="precio" type="number" class="form-control" placeholder="Ejemplo: 25000" min="0" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select name="categoria" id="categoria" class="form-control" required>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Camioneta">Camioneta</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Deportivo">Deportivo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" rows="3" placeholder="Añade una descripción del vehículo"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Añadir Vehículo</button>
+        </form>
+
+        <!-- lista de vehículos -->
+        <ul id="vehicle-list" class="list-group">
+           <!-- Aquí se mostrarán los vehículos desde JS o PHP -->
+        </ul>
+
+    </main>
+    <!-- fin main container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
